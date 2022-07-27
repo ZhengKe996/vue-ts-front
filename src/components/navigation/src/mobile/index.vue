@@ -1,5 +1,5 @@
 <template>
-  <div>main 我是pc</div>
+  <div>mobile</div>
 </template>
 
 <script setup lang="ts"></script>
