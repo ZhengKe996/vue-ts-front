@@ -11,7 +11,10 @@ import store from "./store";
 import "virtual:svg-icons-register";
 
 import { useREM } from "./utils/flexible";
+import useTheme from "./utils/theme";
+
 useREM();
+useTheme();
 
 const app = createApp(App);
 app.use(router).use(mLibs).use(store);

@@ -2,7 +2,7 @@
   <m-popover>
     <template #reference>
       <m-svg-icon
-        name="theme-light"
+        :name="svgIconName"
         class="guide-theme w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
         fillClass="fill-zinc-900 dark:fill-zinc-300"
       ></m-svg-icon>
@@ -13,6 +13,7 @@
         class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-100/60 dark:hover:bg-zinc-800"
         v-for="item in themeArr"
         :key="item.id"
+        @click="onItemClick(item)"
       >
         <m-svg-icon
           :name="item.icon"
@@ -28,10 +29,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+import { useStore } from "vuex";
 import { THEME_DARK, THEME_LIGHT, THEME_SYSTEM } from "@/constants";
-
+interface ThemeType {
+  id: string;
+  type: typeof THEME_LIGHT | typeof THEME_DARK | typeof THEME_SYSTEM;
+  icon: string;
+  name: string;
+}
 // 构建渲染数据源
-const themeArr = [
+const themeArr: ThemeType[] = [
   {
     id: "0",
     type: THEME_LIGHT,
@@ -51,4 +59,17 @@ const themeArr = [
     name: "跟随系统",
   },
 ];
+
+const store = useStore();
+const onItemClick = (themeItem: ThemeType) => {
+  store.commit("Theme/changeThemeType", themeItem.type);
+};
+
+const svgIconName = computed(() => {
+  const findTheme = themeArr.find(
+    (item) => item.type === store.getters.themeType
+  );
+
+  return findTheme?.icon;
+});
 </script>

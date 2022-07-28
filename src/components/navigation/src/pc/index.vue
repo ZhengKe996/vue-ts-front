@@ -24,7 +24,7 @@
         class="shrink-0 px-1.5 py-0 z-10 duration-200 last:mr-4 text-zinc-900 dark:text-zinc-500 dark:hover:text-zinc-300 text-base font-bold h-4 leading-4 cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-900 rounded mr-1 mb-1"
         :class="{
           'text-zinc-900 dark:text-zinc-300 bg-zinc-200 dark:bg-zinc-900':
-            (this as any).$store.getters.currentCategoryIndex === index,
+            currentCategoryIndex === index,
         }"
         @click="onItemClick(item)"
       >
