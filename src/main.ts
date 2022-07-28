@@ -4,7 +4,7 @@ import "normalize.css";
 import "./styles/index.scss";
 import router from "./router";
 import mLibs from "./libs";
-
+import store from "./store";
 /**
  * @description 注册 svg-icon
  */
@@ -14,5 +14,5 @@ import { useREM } from "./utils/flexible";
 useREM();
 
 const app = createApp(App);
-app.use(router).use(mLibs);
+app.use(router).use(mLibs).use(store);
 app.mount("#app");

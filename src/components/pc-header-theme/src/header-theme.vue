@@ -2,7 +2,7 @@
   <m-popover>
     <template #reference>
       <m-svg-icon
-        :name="svgIconName"
+        name="theme-light"
         class="guide-theme w-4 h-4 p-1 cursor-pointer rounded-sm duration-200 outline-none hover:bg-zinc-100/60 dark:hover:bg-zinc-900"
         fillClass="fill-zinc-900 dark:fill-zinc-300"
       ></m-svg-icon>
@@ -13,7 +13,6 @@
         class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-100/60 dark:hover:bg-zinc-800"
         v-for="item in themeArr"
         :key="item.id"
-        @click="onItemClick(item)"
       >
         <m-svg-icon
           :name="item.icon"
