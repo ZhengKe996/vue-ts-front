@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/main",
     name: "main",
-    component: () => import("@/views/Main"),
+    component: () => import("@/views/layout"),
   },
 ];
 
