@@ -12,7 +12,7 @@
         class="w-full rounded bg-transparent"
         :src="pexel.photo"
         :style="{
-          height: (width! / pexel.width) * pexel.height + 'px',
+          height: (width! / pexel.photoWidth) * pexel.photoHeight + 'px',
         }"
       />
       <!-- 遮罩层 -->

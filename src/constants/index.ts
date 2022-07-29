@@ -49,13 +49,20 @@ export interface Category {
 }
 
 export interface Pexel {
-  author: string;
-  avatar: string;
-  id: number | string;
+  tags: Array<string>;
+  _id: string;
+  photoLink: string;
   photo: string;
+  authorLike: string;
+  avatar: string;
+  author: string;
+  photoDownLink: string;
+  id: string;
   title: string;
-  width: number;
-  height: number;
+  photoWidth: number;
+  photoHeight: number;
+  photoType: string;
+  __v: number;
 }
 export interface Theme {
   id?: string;
