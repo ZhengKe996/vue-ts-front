@@ -21,11 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useStore } from "vuex";
 import { getPexels } from "@/api/pexels";
 import { Pexel } from "@/constants";
 import { isMobileTerminal } from "@/utils/flexible";
 import ListItem from "./item.vue";
+
+const store = useStore();
 /**
  * 构建数据请求
  */
@@ -66,4 +69,42 @@ const getPexlesData = async () => {
   // 修改 loading 标记
   loading.value = false;
 };
+
+/**
+ * 通过此方法修改 query 请求参数，重新发起请求
+ */
+const resetQuery = (newQuery: any) => {
+  query = { ...query, ...newQuery };
+  // 重置状态
+  isFinished.value = false;
+  pexelList.value = [];
+};
+
+/**
+ * 监听 currentCategory 的变化
+ */
+watch(
+  () => store.getters.currentCategory,
+  (currentCategory) => {
+    // 重置请求参数
+    resetQuery({
+      page: 1,
+      categoryId: currentCategory.id,
+    });
+  }
+);
+
+/**
+ * 监听搜索内容项的变化
+ */
+watch(
+  () => store.getters.searchText,
+  (value) => {
+    // 重置请求参数
+    resetQuery({
+      page: 1,
+      searchText: value,
+    });
+  }
+);
 </script>

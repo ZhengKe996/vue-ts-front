@@ -42,10 +42,10 @@ export const THEME_LIGHT = "light";
 export const THEME_SYSTEM = "system";
 
 export interface Category {
-  col: number;
+  col?: number;
   id: string;
   name: string;
-  urlname: string;
+  urlname?: string;
 }
 
 export interface Pexel {
@@ -56,4 +56,9 @@ export interface Pexel {
   title: string;
   width: number;
   height: number;
+}
+export interface Theme {
+  id?: string;
+  photo?: string;
+  title?: string;
 }
