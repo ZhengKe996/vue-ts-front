@@ -4,6 +4,7 @@
   >
     <div class="flex items-center">
       <img
+        v-lazy
         class="h-5 cursor-pointer mr-2 guide-home"
         src="https://front-zk.oss-cn-hangzhou.aliyuncs.com/logo.png"
         @click="onToHome"

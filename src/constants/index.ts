@@ -47,3 +47,13 @@ export interface Category {
   name: string;
   urlname: string;
 }
+
+export interface Pexel {
+  author: string;
+  avatar: string;
+  id: number | string;
+  photo: string;
+  title: string;
+  width: number;
+  height: number;
+}
