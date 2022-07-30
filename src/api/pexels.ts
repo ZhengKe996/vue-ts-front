@@ -9,3 +9,9 @@ export const getHint = (q: string) => {
 export const getThemes = () => {
   return service({ url: "/pexels/themes" });
 };
+
+export const getPexelsFromId = (id: number | string) => {
+  return service({
+    url: `/pexels/${id}`,
+  });
+};

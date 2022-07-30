@@ -5,6 +5,7 @@
       :style="{
         backgroundColor: randomRGB(),
       }"
+      @click="onToPinsClick"
     >
       <!-- 图片 -->
       <img
@@ -65,15 +66,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useFullscreen } from "@vueuse/core";
+import { ref, computed } from "vue";
+import { useFullscreen, useElementBounding } from "@vueuse/core";
 import { saveAs } from "file-saver";
 import { message } from "@/libs";
 import { Pexel } from "@/constants";
 import { randomRGB } from "@/utils/color";
 
 const { pexel } = defineProps<{ pexel: Pexel; width?: number }>();
+const emits = defineEmits(["click"]);
 const imgTarget = ref<HTMLImageElement>();
+
+/**
+ * pins 跳转处理，记录图片的中心点（X|Y位置 + 宽|高的一半）
+ */
+const {
+  x: imgContainerX,
+  y: imgContainerY,
+  width: imgContainerWidth,
+  height: imgContainerHeight,
+} = useElementBounding(imgTarget);
+
+const imgContainerCenter = computed(() => {
+  return {
+    translateX: Math.floor(imgContainerX.value + imgContainerWidth.value / 2),
+    translateY: Math.floor(imgContainerY.value + imgContainerHeight.value / 2),
+  };
+});
+
+/**
+ * 进入详情点击事件
+ */
+const onToPinsClick = () => {
+  emits("click", {
+    id: pexel.id,
+    localtion: imgContainerCenter.value,
+  });
+};
 
 /**
  * 生成全屏方法
