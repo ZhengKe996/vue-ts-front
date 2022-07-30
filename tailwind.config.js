@@ -22,7 +22,10 @@ module.exports = {
         main: "#F0E68C",
         "hover-main": "#FFFACD",
       },
+      variants: {
+        scrollbar: ["dark"],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

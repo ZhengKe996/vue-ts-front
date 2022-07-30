@@ -9,6 +9,7 @@
       <!-- 图片 -->
       <img
         v-lazy
+        ref="imgTarget"
         class="w-full rounded bg-transparent"
         :src="pexel.photo"
         :style="{
@@ -21,6 +22,7 @@
       >
         <!-- 分享 -->
         <m-button class="absolute top-1.5 left-1.5">分享</m-button>
+
         <!-- 点赞 -->
         <m-button
           class="absolute top-1.5 right-1.5"
@@ -28,6 +30,7 @@
           icon="heart"
           fillClass="fill-zinc-900 dark:fill-zinc-200"
         ></m-button>
+
         <!-- 下载 -->
         <m-button
           class="absolute bottom-1.5 left-1.5 bg-zinc-100/70"
@@ -35,7 +38,9 @@
           icon="download"
           size="small"
           fillClass="fill-zinc-900 dark:fill-zinc-200"
+          @click="onDownload"
         ></m-button>
+
         <!-- 全屏 -->
         <m-button
           class="absolute bottom-1.5 right-1.5 bg-zinc-100/70"
@@ -43,6 +48,7 @@
           icon="full"
           size="small"
           fillClass="fill-zinc-900 dark:fill-zinc-200"
+          @click="onImgFullScreen"
         ></m-button>
       </div>
     </div>
@@ -59,8 +65,34 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+import { useFullscreen } from "@vueuse/core";
+import { saveAs } from "file-saver";
+import { message } from "@/libs";
 import { Pexel } from "@/constants";
 import { randomRGB } from "@/utils/color";
 
-defineProps<{ pexel: Pexel; width?: number }>();
+const { pexel } = defineProps<{ pexel: Pexel; width?: number }>();
+const imgTarget = ref<HTMLImageElement>();
+
+/**
+ * 生成全屏方法
+ */
+const { enter: onImgFullScreen } = useFullscreen(imgTarget);
+
+/**
+ * 下载按钮点击事件
+ */
+const onDownload = () => {
+  // 提示消息
+  message("success", "图片开始下载");
+  /**
+   * 接收两个参数：
+   * 1. 下载的图片链接
+   * 2. 下载的文件名称
+   */
+  setTimeout(() => {
+    saveAs(pexel.photoDownLink, `${pexel.title} - 作者：${pexel.author}`);
+  }, 300);
+};
 </script>
