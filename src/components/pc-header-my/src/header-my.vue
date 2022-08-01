@@ -5,11 +5,7 @@
         class="guide-my relative flex items-center p-0.5 rounded-sm cursor-pointer duration-200 outline-none hover:bg-zinc-100 dark:hover:bg-zinc-900"
         v-if="(this as any).$store.getters.token"
       >
-        <img
-          v-lazy
-          class="w-3 h-3 rounded-sm"
-          :src="(this as any).$store.getters.userInfo?.avatar"
-        />
+        <img v-lazy class="w-3 h-3 rounded-sm" :src="UserImg" />
         <m-svg-icon
           class="h-1.5 w-1.5 ml-0.5"
           fillClass="fill-zinc-900 dark:fill-zinc-300"
@@ -59,6 +55,7 @@
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { confirm } from "@/libs";
+import { UserImg } from "@/constants";
 
 const router = useRouter();
 const store = useStore();

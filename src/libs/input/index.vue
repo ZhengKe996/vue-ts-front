@@ -1,0 +1,50 @@
+<template>
+  <div class="relative">
+    <input
+      v-if="type === TYPE_TEXT"
+      class="border-gray-200 dark:border-zinc-600 dark:bg-zinc-800 duration-100 dark:text-zinc-400 border-[1px] outline-0 py-0.5 px-1 text-sm rounded-sm focus:border-blue-400 w-full"
+      type="text"
+      v-model="text"
+      :maxlength="max"
+    />
+    <textarea
+      v-if="type === TYPE_TEXTAREA"
+      v-model="text"
+      :maxlength="max"
+      rows="5"
+      class="border-gray-200 dark:border-zinc-600 dark:bg-zinc-800 duration-100 dark:text-zinc-400 border-[1px] outline-0 py-0.5 px-1 text-sm rounded-sm focus:border-blue-400 w-full"
+    ></textarea>
+    <span
+      v-if="max"
+      class="absolute right-1 bottom-0.5 text-zinc-400 text-xs"
+      :class="{ 'text-red-700': currentNumber === max }"
+      >{{ currentNumber }} / {{ max }}</span
+    >
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useVModel } from "@vueuse/core";
+import { computed } from "vue";
+
+const TYPE_TEXT = "text";
+const TYPE_TEXTAREA = "textarea";
+interface Props {
+  modelValue: string;
+  type?: typeof TYPE_TEXT | typeof TYPE_TEXTAREA;
+  max?: number;
+}
+
+const props = withDefaults(defineProps<Props>(), { type: "text" });
+
+// 事件声明
+defineEmits(["update:modelValue"]);
+
+// 输入的字符
+const text = useVModel(props);
+
+// 输入的字符数
+const currentNumber = computed(() => {
+  return (text.value as string)?.length;
+});
+</script>

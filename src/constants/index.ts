@@ -1,7 +1,12 @@
 import MobileLoginBg from "@/assets/images/login-bg.png";
 import MobileLogo from "@/assets/images/logo-mobile.png";
 import PcLogo from "@/assets/images/logo-pc.png";
-export { MobileLoginBg, MobileLogo, PcLogo };
+import UserImg from "@/assets/images/user.jpg";
+export { MobileLoginBg, MobileLogo, PcLogo, UserImg };
+
+// STS 上传数据
+export const REGION = "oss-cn-hangzhou";
+export const BUCKET = "front-zk";
 
 // PC 设备指定宽度
 export const PC_DEVICE_WIDTH: number = 1280;

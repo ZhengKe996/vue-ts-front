@@ -20,6 +20,11 @@ const routes: RouteRecordRaw[] = [
         name: "pins",
         component: () => import("@/views/pins"),
       },
+      {
+        path: "/profile",
+        name: "profile",
+        component: () => import("@/views/profile"),
+      },
     ],
   },
   {

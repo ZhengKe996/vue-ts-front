@@ -31,3 +31,13 @@ export const registerUser = (data: any) => {
     data,
   });
 };
+
+/**
+ * 获取 OSS 上传凭证
+ */
+export const getSts = () => {
+  return service({
+    url: "/sys/sts",
+    method: "POST",
+  });
+};
