@@ -1,5 +1,7 @@
 import { RootState } from "./index";
-import { Category } from "@/constants";
+import { Category, ROUTER_TYPE_ENUM } from "@/constants";
+import { isMobileTerminal } from "@/utils/flexible";
+
 export default {
   /**
    * navigationBar 数据源
@@ -37,4 +39,14 @@ export default {
    * 获取用户信息
    */
   userInfo: (state: RootState) => state.User.userInfo,
+  /**
+   * 路由跳转方式
+   */
+  routerType: (state: RootState) => {
+    // 在 PC 端下，永远为 none
+    if (!isMobileTerminal.value) {
+      return ROUTER_TYPE_ENUM.NONE;
+    }
+    return state.App.routerType;
+  },
 };

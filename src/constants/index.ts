@@ -17,6 +17,12 @@ export const LOGIN_TYPE_OAUTH_NO_REGISTER_CODE = 204;
 export const LOGIN_TYPE_QQ = "QQ";
 export const LOGIN_TYPE_WX = "WX";
 
+export enum ROUTER_TYPE_ENUM {
+  NONE = "none",
+  PUSH = "push",
+  BACK = "back",
+}
+
 // category 的本地构建数据
 export const ALL_CATEGORY_ITEM = {
   id: "all",

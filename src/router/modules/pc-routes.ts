@@ -25,6 +25,11 @@ const routes: RouteRecordRaw[] = [
         name: "profile",
         component: () => import("@/views/profile"),
       },
+      {
+        path: "/member",
+        name: "member",
+        component: () => import("@/views/member"),
+      },
     ],
   },
   {

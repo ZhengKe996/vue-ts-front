@@ -1,6 +1,6 @@
 import { Module } from "vuex";
 import { RootState } from "../index";
-import { ALL_CATEGORY_ITEM, Category } from "@/constants";
+import { ALL_CATEGORY_ITEM, Category, ROUTER_TYPE_ENUM } from "@/constants";
 
 export interface AppState {
   // 当前选中的分类
@@ -8,8 +8,9 @@ export interface AppState {
   // 搜索的文本
   searchText: string;
   // 路由跳转类型
-  routerType: string;
+  routerType: "none" | "push" | "back";
 }
+
 /**
  * app 的数据
  */
@@ -21,7 +22,7 @@ export const store: Module<AppState, RootState> = {
     // 搜索的文本
     searchText: "",
     // 路由跳转类型
-    routerType: "none",
+    routerType: ROUTER_TYPE_ENUM.NONE,
   }),
   mutations: {
     /**

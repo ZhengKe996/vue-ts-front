@@ -18,13 +18,17 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import PcHeaderMy from "@/components/pc-header-my";
 import PcHeaderSearch from "@/components/pc-header-search";
 import PcHeaderTheme from "@/components/pc-header-theme";
-import { MobileLogo } from "@/constants";
-
+import { MobileLogo, ROUTER_TYPE_ENUM } from "@/constants";
+const store = useStore();
 const router = useRouter();
 const onToHome = () => {
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
+
   router.push("/");
 };
 </script>

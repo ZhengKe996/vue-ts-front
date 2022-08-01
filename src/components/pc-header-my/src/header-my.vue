@@ -55,7 +55,7 @@
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { confirm } from "@/libs";
-import { UserImg } from "@/constants";
+import { UserImg, ROUTER_TYPE_ENUM } from "@/constants";
 
 const router = useRouter();
 const store = useStore();
@@ -85,6 +85,9 @@ const menuArr = [
  * 登录按钮点击事件
  */
 const onToLogin = () => {
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
+
   // 配置跳转方式
   router.push("/login");
 };
@@ -95,6 +98,8 @@ const onToLogin = () => {
 const onItemClick = (path: string) => {
   // 有路径则进行路径跳转
   if (path) {
+    // 移动端下跳转的类型
+    store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
     // 配置跳转方式
     router.push(path);
     return;

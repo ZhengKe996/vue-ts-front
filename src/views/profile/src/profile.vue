@@ -132,6 +132,7 @@ import { useStore } from "vuex";
 import ChangeAvatar from "@/components/change-avatar";
 import { isMobileTerminal } from "@/utils/flexible";
 import { message, confirm } from "@/libs";
+import { ROUTER_TYPE_ENUM } from "@/constants";
 const store = useStore();
 const router = useRouter();
 
@@ -201,6 +202,8 @@ const onChangeProfile = async () => {
  */
 const onNavbarLeftClick = () => {
   // 配置跳转方式
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.BACK);
+
   router.back();
 };
 

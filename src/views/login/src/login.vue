@@ -92,7 +92,7 @@ import { message } from "@/libs";
 import PcHeader from "@/components/login-header";
 import SliderCaptcha from "@/components/slider-captcha";
 import { validateUsername, validatePassword } from "@/utils/validate";
-import { LOGIN_TYPE_USERNAME } from "@/constants";
+import { LOGIN_TYPE_USERNAME, ROUTER_TYPE_ENUM } from "@/constants";
 
 const router = useRouter();
 const store = useStore();
@@ -141,6 +141,8 @@ const onLogin = async () => {
   } finally {
     loading.value = false;
   }
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
 
   // 执行登录操作
   router.push("/");
@@ -150,6 +152,9 @@ const onLogin = async () => {
  * 进入注册页面
  */
 const onToRegister = () => {
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
+
   // 配置跳转方式
   router.push("/register");
 };

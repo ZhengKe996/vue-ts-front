@@ -78,7 +78,7 @@ import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { getPexelsFromId } from "@/api/pexels";
-import { Pexel } from "@/constants";
+import { Pexel, ROUTER_TYPE_ENUM } from "@/constants";
 import { isMobileTerminal } from "@/utils/flexible";
 
 const { id } = defineProps<{ id: string | number }>();
@@ -99,7 +99,8 @@ const router = useRouter();
 const store = useStore();
 const onPop = () => {
   // 配置跳转方式
-  // store.commit("app/changeRouterType", "back");
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.BACK);
+
   router.back();
   window.history.go(-1);
 };

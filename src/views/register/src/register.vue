@@ -111,7 +111,7 @@ import {
 } from "@/utils/validate";
 import PcHeader from "@/components/login-header";
 
-import { LOGIN_TYPE_USERNAME } from "@/constants";
+import { LOGIN_TYPE_USERNAME, ROUTER_TYPE_ENUM } from "@/constants";
 
 const store = useStore();
 const router = useRouter();
@@ -126,6 +126,9 @@ defineRule("validateConfirmPassword", validateConfirmPassword);
  * 进入登录页面
  */
 const onToLogin = () => {
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
+
   // 配置跳转方式
   router.push("/login");
 };
@@ -169,6 +172,8 @@ const onRegister = async () => {
   } finally {
     loading.value = false;
   }
+  // 移动端下跳转的类型
+  store.commit("App/changeRouterType", ROUTER_TYPE_ENUM.PUSH);
   router.push("/");
 };
 </script>
