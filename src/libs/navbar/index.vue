@@ -50,6 +50,7 @@ const onClickLeft = () => {
     clickLeft();
     return;
   }
+
   router.back();
 };
 

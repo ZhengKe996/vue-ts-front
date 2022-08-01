@@ -6,8 +6,8 @@
     <m-navbar
       v-if="isMobileTerminal"
       sticky
-      @clickLeft="onPop"
-      @clickRight="onPop"
+      :clickLeft="onPop"
+      :clickRight="onPop"
     >
       {{ pexelData && pexelData.title }}
       <template #right>
@@ -100,6 +100,7 @@ const store = useStore();
 const onPop = () => {
   // 配置跳转方式
   // store.commit("app/changeRouterType", "back");
+  router.back();
   window.history.go(-1);
 };
 onMounted(() => getPexelData());
