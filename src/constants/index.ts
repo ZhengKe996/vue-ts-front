@@ -1,5 +1,16 @@
+import MobileLoginBg from "@/assets/images/login-bg.png";
+import MobileLogo from "@/assets/images/logo-mobile.png";
+import PcLogo from "@/assets/images/logo-pc.png";
+export { MobileLoginBg, MobileLogo, PcLogo };
+
 // PC 设备指定宽度
 export const PC_DEVICE_WIDTH: number = 1280;
+
+// 登录方式
+export const LOGIN_TYPE_USERNAME = "username";
+export const LOGIN_TYPE_OAUTH_NO_REGISTER_CODE = 204;
+export const LOGIN_TYPE_QQ = "QQ";
+export const LOGIN_TYPE_WX = "WX";
 
 // category 的本地构建数据
 export const ALL_CATEGORY_ITEM = {

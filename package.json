@@ -13,7 +13,9 @@
     "driver.js": "^0.9.8",
     "file-saver": "^2.0.5",
     "gsap": "^3.10.4",
+    "md5": "^2.3.0",
     "normalize.css": "^8.0.1",
+    "vee-validate": "^4.6.2",
     "vue": "^3.2.25",
     "vue-router": "^4.0.15",
     "vuex": "^4.0.2",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.5",
+    "@types/md5": "^2.3.2",
     "@types/node": "^17.0.34",
     "@vitejs/plugin-vue": "^2.3.3",
     "autoprefixer": "^10.4.7",

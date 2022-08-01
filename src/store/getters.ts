@@ -29,4 +29,12 @@ export default {
    * 搜索文本
    */
   searchText: (state: RootState) => state.App.searchText,
+  /**
+   * token
+   */
+  token: (state: RootState) => state.User.token,
+  /**
+   * 获取用户信息
+   */
+  userInfo: (state: RootState) => state.User.userInfo,
 };

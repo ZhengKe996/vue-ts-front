@@ -4,7 +4,7 @@ import messageComponent from "./index.vue";
 export const message = (
   type: "success" | "warn" | "error",
   content: string,
-  duration = 3000
+  duration = 2000
 ) => {
   /**
    * 动画结束时的回调

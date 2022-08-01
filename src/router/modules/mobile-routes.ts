@@ -15,6 +15,16 @@ const routes: RouteRecordRaw[] = [
     name: "pins",
     component: () => import("@/views/pins"),
   },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/login"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("@/views/register"),
+  },
 ];
 
 export default routes;

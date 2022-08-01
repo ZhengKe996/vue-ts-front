@@ -6,7 +6,7 @@
       <img
         v-lazy
         class="h-5 cursor-pointer mr-2 guide-home"
-        src="https://front-zk.oss-cn-hangzhou.aliyuncs.com/logo.png"
+        :src="MobileLogo"
         @click="onToHome"
       />
       <pc-header-search class="mr-1" />
@@ -21,6 +21,7 @@ import { useRouter } from "vue-router";
 import PcHeaderMy from "@/components/pc-header-my";
 import PcHeaderSearch from "@/components/pc-header-search";
 import PcHeaderTheme from "@/components/pc-header-theme";
+import { MobileLogo } from "@/constants";
 
 const router = useRouter();
 const onToHome = () => {
