@@ -71,7 +71,7 @@ const menuArr = [
     id: 1,
     title: "升级VIP",
     icon: "vip-profile",
-    path: "/memeber",
+    path: "/member",
   },
   {
     id: 2,

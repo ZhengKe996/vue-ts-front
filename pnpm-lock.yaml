@@ -11,6 +11,7 @@ specifiers:
   autoprefixer: ^10.4.7
   axios: ^0.27.2
   cropperjs: ^1.5.12
+  dayjs: ^1.11.4
   driver.js: ^0.9.8
   file-saver: ^2.0.5
   gsap: ^3.10.4
@@ -35,6 +36,7 @@ dependencies:
   ali-oss: 6.17.1
   axios: 0.27.2
   cropperjs: 1.5.12
+  dayjs: 1.11.4
   driver.js: 0.9.8
   file-saver: 2.0.5
   gsap: 3.10.4
@@ -748,6 +750,10 @@ packages:
 
   /dateformat/2.2.0:
     resolution: {integrity: sha512-GODcnWq3YGoTnygPfi02ygEiRxqUxpJwuRHjdhJYuxpcZmDq4rjBiXYmbCCzStxo176ixfLT6i4NPwQooRySnw==}
+    dev: false
+
+  /dayjs/1.11.4:
+    resolution: {integrity: sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==}
     dev: false
 
   /debug/2.6.9:

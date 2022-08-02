@@ -2,7 +2,9 @@ import MobileLoginBg from "@/assets/images/login-bg.png";
 import MobileLogo from "@/assets/images/logo-mobile.png";
 import PcLogo from "@/assets/images/logo-pc.png";
 import UserImg from "@/assets/images/user.jpg";
-export { MobileLoginBg, MobileLogo, PcLogo, UserImg };
+import Alipay from "@/assets/images/alipay.png";
+
+export { MobileLoginBg, MobileLogo, PcLogo, UserImg, Alipay };
 
 // STS 上传数据
 export const REGION = "oss-cn-hangzhou";
