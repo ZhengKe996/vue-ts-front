@@ -17,6 +17,7 @@ specifiers:
   gsap: ^3.10.4
   md5: ^2.3.0
   normalize.css: ^8.0.1
+  pinia: ^2.0.22
   postcss: ^8.4.14
   sass: ^1.52.1
   tailwind-scrollbar: ^1.3.1
@@ -28,7 +29,6 @@ specifiers:
   vue: ^3.2.25
   vue-router: ^4.0.15
   vue-tsc: ^0.34.7
-  vuex: ^4.0.2
   vuex-persistedstate: ^4.1.0
 
 dependencies:
@@ -42,11 +42,11 @@ dependencies:
   gsap: 3.10.4
   md5: 2.3.0
   normalize.css: 8.0.1
+  pinia: 2.0.22_j6bzmzd4ujpabbp5objtwxyjp4
   vee-validate: 4.6.2_vue@3.2.37
   vue: 3.2.37
   vue-router: 4.1.2_vue@3.2.37
-  vuex: 4.0.2_vue@3.2.37
-  vuex-persistedstate: 4.1.0_vuex@4.0.2
+  vuex-persistedstate: 4.1.0
 
 devDependencies:
   '@types/ali-oss': 6.16.4
@@ -2165,6 +2165,24 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /pinia/2.0.22_j6bzmzd4ujpabbp5objtwxyjp4:
+    resolution: {integrity: sha512-u+b8/BC+tmvo3ACbYO2w5NfxHWFOjvvw9DQnyT0dW8aUMCPRQT5QnfZ5R5W2MzZBMTeZRMQI7V/QFbafmM9QHw==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.2.1
+      typescript: 4.7.4
+      vue: 3.2.37
+      vue-demi: 0.13.5_vue@3.2.37
+    dev: false
+
   /platform/1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
     dev: false
@@ -2874,7 +2892,6 @@ packages:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /unescape/1.0.1:
     resolution: {integrity: sha512-O0+af1Gs50lyH1nUu3ZyYS1cRh01Q/kUKatTOkSs7jukXE6/NebucDVxyiDsA9AQ4JC1V1jUH9EO8JX2nMDgGQ==}
@@ -3090,7 +3107,7 @@ packages:
       '@vue/server-renderer': 3.2.37_vue@3.2.37
       '@vue/shared': 3.2.37
 
-  /vuex-persistedstate/4.1.0_vuex@4.0.2:
+  /vuex-persistedstate/4.1.0:
     resolution: {integrity: sha512-3SkEj4NqwM69ikJdFVw6gObeB0NHyspRYMYkR/EbhR0hbvAKyR5gksVhtAfY1UYuWUOCCA0QNGwv9pOwdj+XUQ==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
@@ -3098,16 +3115,6 @@ packages:
     dependencies:
       deepmerge: 4.2.2
       shvl: 2.0.3
-      vuex: 4.0.2_vue@3.2.37
-    dev: false
-
-  /vuex/4.0.2_vue@3.2.37:
-    resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}
-    peerDependencies:
-      vue: ^3.0.2
-    dependencies:
-      '@vue/devtools-api': 6.2.1
-      vue: 3.2.37
     dev: false
 
   /win-release/1.1.1:

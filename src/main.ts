@@ -1,23 +1,22 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import "normalize.css";
-import "./styles/index.scss";
-import router from "./router";
-import mLibs from "./libs";
-import mDirectives from "./directives";
-import store from "./store";
+import { createApp } from 'vue'
+import App from './App.vue'
+import 'normalize.css'
+import './styles/index.scss'
+import router from './router'
+import mLibs from './libs'
+import mDirectives from './directives'
+import { createPinia } from 'pinia'
 
 /**
  * @description 注册 svg-icon
  */
-import "virtual:svg-icons-register";
+import 'virtual:svg-icons-register'
 
-import { useREM } from "./utils/flexible";
-import useTheme from "./utils/theme";
+import { useREM } from './utils/flexible'
 
-useREM();
-useTheme();
+useREM()
 
-const app = createApp(App);
-app.use(router).use(mLibs).use(store).use(mDirectives);
-app.mount("#app");
+const app = createApp(App)
+app.use(router).use(mLibs).use(mDirectives).use(createPinia())
+
+app.mount('#app')
